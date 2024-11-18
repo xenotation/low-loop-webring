@@ -1,0 +1,65 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header, main, footer {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+    padding-bottom: 20px;
+    border-bottom: 2px solid white;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.column {
+    padding: 20px;
+    width: calc(50% - 10px);
+    text-align: center;
+}
+
+.column a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.column a:hover {
+    text-decoration: underline;
+}
+
+.broider {
+    border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAC8UlEQVR4Xu2c3XbjMAgG0/d/6O3pzW6tdD2MwY7bfr3rgSAYA0LKz9vj/n9/FhffXuzyrj+vdq7CJkArlIROgApYFdVvB3R1uBLkno5tIwSsK6d4uvFv4v34p2twdThA6RFKeYBKYKT+64GugKhnEdCu3LagWz3Ar5wJ0G1KrIz0YB+gAaq6DCVMS14p+e5YRNHankn2SG57rtpjApTwP8vbPTQZuiUQoMPXf22g0z3HZrzdJKx9W/QBaomBfoAGqNgECrdl3ZbVHpuUgcLTn54z1VGw4N+oSuXp0aZADgXoQihAKWU+yZOhAlZFtQJ0uqdW/PqsQy3DxjBtbxOPdebjxd0WEKDDPTVAA7SeAxMlf/bZuR5NTfP2PTRA5dhEu3yABuhubzjSBv8arLwFQmdn6lwtB8n4ATmNfS15gD4elDBKHqABeqDIty9plTSdFCv9rTu3UQBtQtIA+dOKN0C55NVYGKABKgv8Wf30kqee0Y5gMVCpisk1L43vjM/YE4wAJUJSHqASGKn/eKAEgHqQOprRYifIaRMavU2rZEuAbpHvMgtQHqtePtjbEjuhyjcmrT+2IjeLTdw23b2H2h5JGTn+cUZ64iQ/OyPJPmVggBLBRR6gEhipXw6UHLI9qTJJ2DUn9Qmw8l8p/yeKUYcmSRVtjfofoPwDDIqRUk6Gcs7fEehoCTKCJ43W2BegfPRUjJTyRSWfDIWysg/t1wM90KbU5QUBtut3H3D7+s46bPVpEwhQSTRAJTBS//FAKUACRHIq4e79qrVP/tLdxcbfIxfM1gFyaJUHqCRsM8hWjLUv3d//4lsy1OKEbxJeAZQyxoe0/wo7Z9L65P/lPZQcooCsPEAtseGjLi1PCZEMJYKL/HSgtOuSnOKhAGjMIvtd+bd7Xz5AoUTsJhGgAfqPQGUOtT2nm5H26Hl1z97lEaD8NrJKqAANUP3tYcowuwm2S972RArAyrs90q7X0q+UfIAKxAEqYFVUA7RCSei8A8CnMFzvW3luAAAAAElFTkSuQmCC") 28 / 28px / 0 round;
+    border-width: 28px;
+    border-style: solid;
+}
+
+.description p {
+    margin: 20px auto;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #ddd;
+}
+
+.logo {
+    width: 100px;
+    margin: 20px auto;
+}
