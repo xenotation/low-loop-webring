@@ -318,7 +318,6 @@
         To add yourself to the ring, submit a <a href="/xenotation/webring" target="_blank">pull request or write to me direcly with a link on <a> href="mailto:" my email</a>.<br />
         If you dinf a broken link, please <a href="/xenotation/webring.git/issues/new" target="_blank">report it</a>.<br />
       </p>
-      <img src="icon.black.large.svg" alt="icon"/>
     </footer>
   </div>
     <style>
@@ -345,14 +344,26 @@
       }
 
       .border {
-        border-image:  url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAACCElEQVR4Xu3c646CMBRFYXz/h55bZhKDE7Yr3UDRReIvD4f262mpYrwty/Lx9fIoCdwELUn+phG067kI+gKg34O4dYyu6ev8o/kQ+RkVKigaohwsaDZCEYIiruXnRnd/HLqGwbbWw/dYQwUtD5OggvYE9pjy69a9VcUK2ivOn0yCCloWKKc7okJHm3ypNVjQ0eFenS+ooHM/srlChZZrCKdDa7ig2VfQbIQiBEVcOVjQbIQiBEVcOVjQbIQiBEVcOXh60PSQLneRRRz6TOuMfaigrCBitKCRiAUIyrxitKCRiAUIyrxitKCRiAUIyrxi9GygaOOeeuc+tPzjNkEFTZPu4f300XP3KU8vMBqPheAJCRSm2/79639TfhQodWC2m5KgUCANMExnhQpKSybEt0E3L+caWh49QQXFApeb8rSHV9827b6GCnon0FhDBRWU1sDz8X7b9LzVX+TmR3NBBcUC7W2TFYqHYPsEDEr3ie0KKPf/2HTPbJtSiwSF2yZBk4CgQAiGnrFtgk28Vrig5fESVNCyQDndO1QofSw+RCzoEN/jyYIKigWc8phsohPeYcofyi1omVtQQbGANyVMNvANe/lah/z3XbvNNJ8VSsVC/MuD0g7uHV8dvzPu8nsD0fyCzjTF122xQqv1ecw/3JabPHe6Myp0bpHB1gk6CDjDGlruwlzpPgGmL8QBHSvelwAAAABJRU5ErkJggg==") 28 /  28px / 0 round;
+        border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAACCElEQVR4Xu3c646CMBRFYXz/h55bZhKDE7Yr3UDRReIvD4f262mpYrwty/Lx9fIoCdwELUn+phG067kI+gKg34O4dYyu6ev8o/kQ+RkVKigaohwsaDZCEYIiruXnRnd/HLqGwbbWw/dYQwUtD5OggvYE9pjy69a9VcUK2ivOn0yCCloWKKc7okJHm3ypNVjQ0eFenS+ooHM/srlChZZrCKdDa7ig2VfQbIQiBEVcOVjQbIQiBEVcOVjQbIQiBEVcOXh60PSQLneRRRz6TOuMfaigrCBitKCRiAUIyrxitKCRiAUIyrxitKCRiAUIyrxi9GygaOOeeuc+tPzjNkEFTZPu4f300XP3KU8vMBqPheAJCRSm2/79639TfhQodWC2m5KgUCANMExnhQpKSybEt0E3L+caWh49QQXFApeb8rSHV9827b6GCnon0FhDBRWU1sDz8X7b9LzVX+TmR3NBBcUC7W2TFYqHYPsEDEr3ie0KKPf/2HTPbJtSiwSF2yZBk4CgQAiGnrFtgk28Vrig5fESVNCyQDndO1QofSw+RCzoEN/jyYIKigWc8phsohPeYcofyi1omVtQQbGANyVMNvANe/lah/z3XbvNNJ8VSsVC/MuD0g7uHV8dvzPu8nsD0fyCzjTF122xQqv1ecw/3JabPHe6Myp0bpHB1gk6CDjDGlruwlzpPgGmL8QBHSvelwAAAABJRU5ErkJggg==") 28 /  28px / 0 round;
         border-width:  28px;
         border-style:  solid;
         filter: drop-shadow(1px 1px 4px #ac648f);
-
+        animation: pulse-shadow 69s infinite;
+      }
+      
+      @keyframes pulse-shadow {
+        0% {
+          filter: drop-shadow(1px 1px 3px #ac648f);
+        }
+        50% {
+          filter: drop-shadow(2px 2px 7px #ac648f);
+        }
+        100% {
+          filter: drop-shadow(1px 1px 4px #ac648f);
+        }
       }
       .container {
-        margin: 30px 30px 30px 30px;
+        margin: 0px 30px 30px 30px;
         text-align: justify;
       }
       
@@ -399,7 +410,7 @@
       }
       
       footer {
-        padding: 30px 30px 0px 42px;
+        padding: 0px 30px 0px 42px;
         text-align: justify;
         height: 16rem;
       }
