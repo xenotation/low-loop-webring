@@ -11,11 +11,11 @@
     <div class="border">
     <pre class="ascii-art">
       _______        __    _   _         
-     (   _   )      / _)  | | | |        
-      | | | | ___   \ \   | |_| |___ ___ 
-      | | | |/ _ \ / _ \  |  _  |/ __|   )
-      | | | ( (_) | (_) ) | | | |> _) | | 
-      |_| |_|\___/ \___/  |_| |_|\___)|_|
+     (   _   )      / _|  | | | |        
+      | | | | ___   \ \   | |_| | ___ ___ 
+      | | | |/ _ \ / _ \  |  _  |/ __|   |
+      | | | ( (_) | (_) ) | | | |> _| | | 
+      |_| |_|\___/ \___/  |_| |_|\___||_|
       Интернет седянка/поста
     </pre>
     <div class="container">
@@ -23,18 +23,18 @@
 
       <ol start="0">
         <li>
-          <a href="blog.newdegeneration.xyz" alt="Blog for occultural writings and translations, maintaned by Nikola Stoyanov">New Degeneration</a>
+          <a href="blog.newdegeneration.xyz" descripton="Blog for occultural writings and translations, maintaned by Nikola Stoyanov">New Degeneration</a>
         </li>
       </ol>
       <ol>
-        <li data-lang="en" id="1">
-          <a href="https://rainmarks.com/" alt="Fiction and Faction,, personal blog of writer and journalist Rayna Markova">Rain Marks</a>
+        <li data-lang="en bg" id="1">
+          <a href="https://rainmarks.com/" descripton="Fiction and Faction,, personal blog of writer and journalist Rayna Markova">Rain Marks</a>
         </li>
-        <li data-lang="en" id="2">
-          <a href="" alt="Fiction and Faction,, personal blog of writer and journalist Rayna Markova">Night Beaches</a>
+        <li data-lang="en bg" id="2">
+          <a href="" descripton="Fiction and Faction,, personal blog of writer and journalist Rayna Markova">Night Beaches</a>
         </li>
-        <li data-lang="en" id="3">
-          <a href="">░░░░░░░░░░</a>
+        <li data-lang="en bg" id="3">
+          <a href="https://creators.spotify.com/pod/show/twinkcelchronicles" descripton="Twinky podcast about current events, personal and worldwide">Twinkcel Chronicles</a>
         </li>
         <li data-lang="en" id="4">
           <a href="">░░░░░░░░░░</a>
@@ -322,8 +322,7 @@
   </div>
     <style>
       body {
-        padding: 30px;
-        margin: 0;
+        margin: 30px;
         font-family: serif;
         max-width: 48rem;
         background-color: #16171E;
@@ -344,13 +343,16 @@
       }
 
       .border {
+        width: 45rem;
         border-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAAAXNSR0IArs4c6QAAAwdJREFUeF7tnNt2wyAMBJ3//+j25K1gDuO11sZptm8NIIuRVlzi9rXtf366j17d79Q+MDn9qLenjl/dv+HTw3o7R8CoXZ1ggEIGB6go6WRoC2wn+arkRmXj7yNV+2RPVYC7/3Q+b+fVCfcOEgDVPtlzA1LtBahKDPoH6Gqg1X0nSVyVdNXereNHNTRA25SWAhKg20aKCVDYV7t3KbgPpYj1DkkRPLFAkH0ySSXMCviI5MlhmrAaIDVg5F+AipINUCLwbUDdElftqf0pflZ7Z2qo1YEDdwnuGqjWaGkNCFC+HApQ0rhYo+1AqxKvjic+ZN+6z9zgZHVE8uQwRbA6PkCvlNSALgUsGUopKQbs8UBXS1zkjV/xWOdzpoZaHVDpnOhPJcE6nwD9wvvQE0nZDHlchtJRjY6GJKkqMHV89UWN6fgjkg/QlkCAwjZLVVCAfhpQqmFqBpA9d7taU+U3RwgArZrqycQNSLUXoCox6B+gnw70v0lc3QZS/Bo+R/ahATpHGqBXbqOSofxXL7dLnrZZ5NDT2qnETe8uHBkaoH9SIkD3+kiGmmvG5UDJX/WkQfbubieAdJSWt000wQAVa2iAtgTKq3yAFoFSzXCfhSlg7vZqzZzOf7RtCtB5RgYonN1JAXRwwVU+GVrMUHdNfPo2ivyjdpR8gLYEApSKINTQ6psvuxqaDL05Q6uLlDpeTDjsTvtOaRUfvGMvZ6gKpDoBJCR2qPpDNTVAu4AkQz8tQ2mRcpcA1R7xdEuc/EPJB+g8ZHh9tzrilAHk390JEKDFRYgCLkvenQFVe9UaWX2+fJYnia2e0OrnByhkSDVAkTxcllDNxAy1RmiQDXSbQyVGnSDZq843QM0ZGaABqp1USOLubRJmqPuB1RpVHX/1fOSTUnVCq8cH6J017sAuhAKSDIUia79grkpUXRTc/cl/dR+r2mvsO95tcgNS7akA1IyU/AnQPS41QMnQ4mXJdPgo/UsRkvRxTWeSND1V+tq4/54+QFnydLnTtAdogJJi8R/9k4GS5H8BHQZ4LAVJ7hQAAAAASUVORK5CYII=') 28 /  28px / 0 round;
-        border-width:  28px;
+        border-width:  15px;
         border-style:  solid;
-        filter: drop-shadow(1px 1px 4px #ca74a8);
+        filter: drop-shadow(1px 3px 4px #ca74a8);
         animation: pulse-shadow 69s infinite;
-
-
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
       
       @keyframes pulse-shadow {
@@ -358,16 +360,15 @@
           filter: drop-shadow(1px 1px 3px #ac648f);
         }
         50% {
-          filter: drop-shadow(2px 2px 7px #ac648f);
+          filter: drop-shadow(12px 2px 9px #ac648f);
         }
         100% {
-          filter: drop-shadow(1px 1px 4px #ac648f);
+          filter: drop-shadow(1px 12px 14px #ac648f);
         }
       }
       .container {
         margin: 0px 30px 00px 30px;
         text-align: justify;
-
       }
       
       a {
@@ -393,12 +394,14 @@
         margin-top: 0px;
         margin-bottom: 0px;
         justify-content: center;
+        column-gap: 1.2em;
       }
       
       ol li {
-        padding-right: 30px;
+
         counter-reset: li -1;
         color: rgb(231, 219, 240);
+        line-height: 1.3rem; /* Adjust as needed */
       }
       
       .ascii-art {
@@ -410,16 +413,19 @@
         font-size: 1rem;
         filter: drop-shadow(1.2px 1.7px 4px #353a4b);
         max-height: 8rem;
+        margin-bottom: 2rem;
+        font-size: 1rem;
       }
       
       footer {
-        padding: 0px 30px 0px 66px;
+        padding-left: 66px;
         text-align: justify;
         height: 12rem;
+        text-shadow: none;
       }
       
       footer p {
-        max-width: 28rem;
+        max-width: 36rem;
         color: #A798B3;;
       }
       
@@ -453,7 +459,7 @@
 
     links.forEach(link => {
       link.addEventListener('mouseenter', () => {
-        readmeText.textContent = link.getAttribute('alt');
+        readmeText.textContent = link.getAttribute('title');
       });
       link.addEventListener('mouseleave', () => {
         readmeText.innerHTML = 'This webring is an experiment in bringing together artists, developers and researchers to build their own website and share traffic among each other. The ring welcomes portfolios, blogs and all kinds of wierd bizzare and strange webpages with an exphasis on Bulgarian creators.';
