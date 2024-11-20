@@ -1,4 +1,4 @@
-A small webring()LINK run by artist and independent theorist Nikola Stoyanov (LINK).
+A small webring()LINK run by artist and independent theorist [Nikola Stoyanov](https://newdegeneration.xyz/bio/).
 
 This webring showcases the work of Bulgarian artists and writer researchers, connecting their research, art, and writing into a cohesive digital space. Featuring a range of perspectives and practices, this webring serves as a platform for creative and intellectual exchange.
 Features
