@@ -1,74 +1,105 @@
-/* General reset */
-body, ol, pre, p {
-    margin: 0;
-    padding: 0;
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #16171E;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full height for vertical centering */
-    background-color: #f5f5f5; /* Optional light background */
+.container {
+  width: auto;
+  height: 46rem;
+  margin: 0 auto;
+  align-items: stretch;
+  padding: 2rem 2rem 2rem 3.6rem;
+  border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAACZklEQVR4Xu2c21ElMQwFuTkSAglsJJvAhkCO8LtXUHSdkux50PxatqX2kUblmcvj5WZ/729/P/4P6fXfn8fOELdutiMwgQ5TFqhAhwk0l6uKrMtZQ0PAAg2BkblAiVA4fnmgFEDI44s51bzV+3drcNyHrg5IoF1JlvkCFegTAUz51SlONWv3/qQPyiCBEsGwJAlUoCGBYfPLp3zlcXRNFagK/fmGXYWGCqGU+nVACUjIF80JMPlD86lPruPjbRMFgIRCAwJC/tB8gYaNuEALMAKiQsOUpz5VoAJ9JkCKaPLC6el7eSoZv+6hdLqUT08IJQIGRyuYDoDiI/8fAn3+uEygRADGU0Gp0N1AuzWFBEInSvNXj48rVKDDNVSgAh2tAstTvqvYs9fM0dP4ZrHL34euBpSuL9CUGNgLdDdQqql3q5npbVXlgwoVaPbDMYEWxajQ4Rq4Heiw/4cvt72xPzzixQ4IdBiwQK8OdPoEh3nEy6Xx0Aa1D8e2KXXg7I1+Go9Ah195CFSgpIHe+HSKkze3r6ECJQmE4wINgZH57YF2Lx8IYDqeAqe2cHsNFWj5T12kADpBgQr0SUMkmMNTviqeHKYMScdvV0MFChIghZEiaH6qQLInf9IDN+WHnxHjQEkR6TgpNlVYuv/hCu06nAYg0JC4Cg2BkblAiVBzvAI25QWafYPe5IXTVSgiygwuD7SGe7aatdofeihWPtjYC3Tz96FZwubWpBAVGjK9PdCQxxdzUhQB7O6/en5cQ7sOCbRLsMwXqEAjAoen/NVrZrsPjY7rG+OzvUbuxiPQaYJlPVN+GPAn/r166/NtX7EAAAAASUVORK5CYII=") 28 /  28px / 0 round;
+  border-width:  15px;
+  border-style:  solid;
+  filter: drop-shadow(1px 3px 4px #ca74a8);
+  animation: pulse-shadow 69s infinite;
 }
 
-/* Center container with border */
-#rss {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-    gap: 1rem;
-    border: 1px solid #ccc;
-    padding: 1rem;
-    max-width: 800px;
-    width: 100%;
-    background: #fff;
-    box-sizing: border-box;
+@keyframes pulse-shadow {
+  0% {
+    filter: drop-shadow(1px 1px 3px rgb(172, 100, 143));
+  }
+  50% {
+    filter: drop-shadow(12px 2px 9px #ac648f);
+  }
+  100% {
+    filter: drop-shadow(1px 12px 14px #ac648f);
+  }
 }
 
-/* Align ASCII art with the first column */
+@font-face {
+  font-family: 'CustomFont';
+  src: url('/MS33558C.otf') format('opentype');
+  font-weight: normal;
+}
+
+/* ASCII Art Header */
 header {
-    grid-column: 1 / 2; /* Aligns header with the first column */
+  text-align: left;
 }
 
 .ascii-art {
-    text-align: left;
-    font-family: monospace;
+  margin: 0px;
+  font-size: 1rem;
+  filter: drop-shadow(1.2px 1.7px 4px #674d7c);
+  color: #ca74a8;
 }
 
-/* Three-column grid layout for lists */
-.me-list, .friend-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    grid-column: span 3; /* Both lists are evenly spread across all three columns */
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+/* Main Lists */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+  font-family: 'MS33558C', sans-serif;
+}
+
+.container a::before {
+  content: '[[[ ';
+}
+
+.container a::after {
+  content: ' ]]]';
+}
+
+.me-list {
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+  counter-reset: list-counter; /* Initialize counter */
+}
+
+.friend-list {
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 0;
+  counter-reset: list-counter; /* Initialize counter */
+  column-count: 3; /* Defines 3 columns */
+  column-gap: 1.2rem; /* Gap between columns */
 }
 
 .me-list li, .friend-list li {
-    flex: 1 0 30%; /* Make items flow into three columns */
+  counter-increment: list-counter; /* Increment counter */
+  position: relative;
+  padding-left: 2rem; /* Add space for custom numbering */
 }
 
-.me-list a, .friend-list a {
-    text-decoration: none;
-    color: #333;
+.me-list li::before, .friend-list li::before {
+  content: counter(list-counter, decimal-leading-zero) ". "; /* Add leading zeroes */
+  position: absolute;
+  left: 0; /* Align numbers */
+  color: #ca74a8;
 }
 
-.me-list a:hover, .friend-list a:hover {
-    text-decoration: underline;
-}
-
-/* Description styling */
+/* Description Section */
 .description {
-    grid-column: 1 / 3; /* Spans the first two columns */
-    text-align: left;
-}
-
-.description p {
-    border: 1px solid #ccc;
-    padding: 0.5rem;
-    font-style: italic;
-    color: #555;
+  padding: 1rem 0;
+  text-align: left;
+  width: calc((48rem - (1.2rem * 2)) / 3 * 2);
 }
