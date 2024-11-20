@@ -61,15 +61,17 @@ main {
   gap: 0;
   padding: 1rem 0;
   font-family: 'MS33558C', sans-serif;
+  text-align: justify;
 }
 
-.container a::before {
+main a::before {
   content: '[[[ ';
 }
 
-.container a::after {
+main a::after {
   content: ' ]]]';
 }
+
 
 .me-list, .friend-list {
   list-style: none;
@@ -100,19 +102,23 @@ main {
   color: #ca74a8;
 }
 
-/* Hover Effect for Links */
 .container a {
-  color: inherit; /* Inherit text color */
-  text-decoration: none; /* Remove underline */
+  color: inherit;
+  text-decoration: none;
 }
 
 .container a:hover {
-  color: #98DC89; /* Change to hover color */
+  color: #98DC89;
 }
 
-/* Description Section */
 .description {
-  padding: 1rem 0;
   text-align: left;
-  width: calc((48rem - (1.2rem * 2)) / 3 * 2);
+  width: calc((36rem - (1.2rem * 2)) / 3 * 2);
+  text-align: justify;
+  line-height: 1.2rem;
+  font-size: 1rem;
+}
+
+.description a {
+  text-decoration: underline;
 }
