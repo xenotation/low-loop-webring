@@ -30,7 +30,7 @@ body, html {
     filter: drop-shadow(1px 3px 8px #8b5c7d);
   }
   26% {
-    filter: drop-shadow(1px 6px 18px #744561);
+    filter: drop-shadow(1px 6px 16px #744561);
   }
   39% {
     filter: drop-shadow(1px 9px 12px #a85f91);
@@ -39,13 +39,13 @@ body, html {
     filter: drop-shadow(2px 4px 8px #c46ba0);
   }
   65% {
-    filter: drop-shadow(1px 7px 16px #d06eae);
+    filter: drop-shadow(1px 7px 14px #d06eae);
   }
   78% {
-    filter: drop-shadow(1px 10px 20px #bc65a3);
+    filter: drop-shadow(1px 10px 17px #bc65a3);
   }
   100% {
-    filter: drop-shadow(1px 12px 24px #d476af);
+    filter: drop-shadow(1px 12px 19px #d476af);
   }
 }
 
@@ -153,7 +153,7 @@ main a::after {
   main {
     display: flex;
     flex-direction: column;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin: 0 0.2rem 0 0.2rem;
     padding: 0;
 
