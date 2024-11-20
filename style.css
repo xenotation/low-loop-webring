@@ -122,3 +122,39 @@ main a::after {
 .description a {
   text-decoration: underline;
 }
+
+/* Mobile setup */
+/* Mobile Media Query */
+@media (max-width: 768px) {
+  .container {
+    width: 80vw;
+    height: auto; /* Adjust container height for mobile */
+    padding: 1.5rem;
+    border-width: 10px; /* Adjust border width */
+  }
+
+  .ascii-art {
+    font-size: 0.8rem; /* Smaller ASCII text */
+    margin: 0.1rem 0 0rem 0; /* Adjust margin */
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    margin: 0 0.2rem 0 0.2rem;
+    padding: 0;
+
+  }
+
+  .friend-list {
+    column-count: 2; /* Stack the friend list in one column on mobile */
+    column-gap: 0;
+  }
+
+  .description {
+    width: 100%; /* Full width for description */
+    font-size: 0.9rem; /* Adjust font size for readability */
+    margin: 0 0.5rem 0 0.2rem;
+  }
+}
