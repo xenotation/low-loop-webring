@@ -1,3 +1,5 @@
+A small webring()LINK run by artist and independent theorist Nikola Stoyanov (LINK).
+
 This webring showcases the work of Bulgarian artists and writer researchers, connecting their research, art, and writing into a cohesive digital space. Featuring a range of perspectives and practices, this webring serves as a platform for creative and intellectual exchange.
 Features
 
@@ -6,4 +8,4 @@ Features
 
 Contact
 
-For inquiries or collaborations, feel free to reach out via email: av0id.biz@gmail.com
+For inquiries or collaborations, feel free to reach out via email: <a href="mailto:av0id.biz@gmail.com" target="_blank">av0id.biz@gmail.com</a>.
