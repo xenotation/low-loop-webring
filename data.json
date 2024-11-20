@@ -6,10 +6,10 @@
         "link": "https://blog.newdegeneration.xyz"
       }
     ],
-    "friends": [
+  "friends": [
       {
         "name": "░░░░░░░░",
-        "description": "Friend 1's profile.",
+        "description": "Friend profile.",
         "link": "https://friend1.com"
       },
       {
@@ -23,7 +23,7 @@
         "link": "https://friend2.com"
       },
       {
-        "name": "░░░░░░░░  ",
+        "name": "░░░░░░░░",
         "link": "https://friend2.com"
       },
       {

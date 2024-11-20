@@ -27,13 +27,13 @@ body, html {
     filter: drop-shadow(1px 1px 3px rgb(167, 107, 143));
   }
   26% {
-    filter: drop-shadow(11px 6px 18px #744561);
+    filter: drop-shadow(1px 6px 18px #744561);
   }
   52% {
     filter: drop-shadow(2px 4px 8px #c46ba0);
   }
   100% {
-    filter: drop-shadow(1px 12px 12px #d476af);
+    filter: drop-shadow(1px 12px 24px #d476af);
   }
 }
 
@@ -116,3 +116,4 @@ main {
   text-align: left;
   width: calc((48rem - (1.2rem * 2)) / 3 * 2);
 }
+For artist and theorist with cool webbsites, blogs, portfoliosm, wiki and anything cool that is on the web. 
