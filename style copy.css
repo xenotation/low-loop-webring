@@ -1,11 +1,17 @@
+/* General Reset */
 body, html {
+  margin: 0;
+  padding: 0;
+  /* height: 100vh; */
+  display: grid;
+  place-items: center;
   background-color: #16171E;
   color: #CB76A9; /* Set the global text color */
 }
 
 .container {
   width: 38rem;
-  height: auto;
+  height: 54rem;
   overflow: auto;
   margin: 0 auto;
   padding: 2rem 2rem 2rem 3.6rem;
@@ -13,7 +19,7 @@ body, html {
   border-width:  15px;
   border-style:  solid;
   filter: drop-shadow(1px 3px 4px #ca74a8);
-  animation: pulse-shadow 123s infinite;
+  animation: pulse-shadow 99s infinite;
 }
 
 @keyframes pulse-shadow {
@@ -30,16 +36,16 @@ body, html {
     filter: drop-shadow(1px 9px 12px #a85f91);
   }
   52% {
-    filter: drop-shadow(2px 4px 8px #c46b8d);
+    filter: drop-shadow(2px 4px 8px #c46ba0);
   }
   65% {
-    filter: drop-shadow(1px 5px 14px #cf74af);
+    filter: drop-shadow(1px 7px 14px #d06eae);
   }
   78% {
-    filter: drop-shadow(1px 9px 17px #bc65a3);
+    filter: drop-shadow(1px 10px 17px #bc65a3);
   }
   100% {
-    filter: drop-shadow(1px 12px 19px #ce68b8);
+    filter: drop-shadow(1px 12px 19px #d476af);
   }
 }
 
