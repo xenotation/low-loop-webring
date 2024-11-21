@@ -1,13 +1,16 @@
 body, html {
   background-color: #16171E;
-  color: #CB76A9; /* Set the global text color */
+  color: #CB76A9; 
+
 }
 
 .container {
-  width: 38rem;
+  max-width: 38rem; /* Maintain size on larger screens */
+  width: 100%; /* Make responsive for smaller screens */
   height: auto;
   overflow: auto;
   margin: 0 auto;
+  margin-top: auto;
   padding: 2rem 2rem 2rem 3.6rem;
   border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAACZklEQVR4Xu2c21ElMQwFuTkSAglsJJvAhkCO8LtXUHSdkux50PxatqX2kUblmcvj5WZ/729/P/4P6fXfn8fOELdutiMwgQ5TFqhAhwk0l6uKrMtZQ0PAAg2BkblAiVA4fnmgFEDI44s51bzV+3drcNyHrg5IoF1JlvkCFegTAUz51SlONWv3/qQPyiCBEsGwJAlUoCGBYfPLp3zlcXRNFagK/fmGXYWGCqGU+nVACUjIF80JMPlD86lPruPjbRMFgIRCAwJC/tB8gYaNuEALMAKiQsOUpz5VoAJ9JkCKaPLC6el7eSoZv+6hdLqUT08IJQIGRyuYDoDiI/8fAn3+uEygRADGU0Gp0N1AuzWFBEInSvNXj48rVKDDNVSgAh2tAstTvqvYs9fM0dP4ZrHL34euBpSuL9CUGNgLdDdQqql3q5npbVXlgwoVaPbDMYEWxajQ4Rq4Heiw/4cvt72xPzzixQ4IdBiwQK8OdPoEh3nEy6Xx0Aa1D8e2KXXg7I1+Go9Ah195CFSgpIHe+HSKkze3r6ECJQmE4wINgZH57YF2Lx8IYDqeAqe2cHsNFWj5T12kADpBgQr0SUMkmMNTviqeHKYMScdvV0MFChIghZEiaH6qQLInf9IDN+WHnxHjQEkR6TgpNlVYuv/hCu06nAYg0JC4Cg2BkblAiVBzvAI25QWafYPe5IXTVSgiygwuD7SGe7aatdofeihWPtjYC3Tz96FZwubWpBAVGjK9PdCQxxdzUhQB7O6/en5cQ7sOCbRLsMwXqEAjAoen/NVrZrsPjY7rG+OzvUbuxiPQaYJlPVN+GPAn/r166/NtX7EAAAAASUVORK5CYII=") 28 /  28px / 0 round;
   border-width:  15px;
@@ -55,7 +58,7 @@ header {
 }
 
 .ascii-art {
-  margin: 0.8rem 0px clamp(1rem, 5vh, 10rem) 0px;
+  margin: 0.8rem 0px clamp(0.5rem, 5vh, 10rem) 0px;
   font-size: 1rem;
   filter: drop-shadow(4px 4px 5px #674d7c);
   color: #ca74a8;
@@ -120,6 +123,7 @@ main a::after {
 .description {
   text-align: left;
   width: calc((36rem - (1.2rem * 2)) / 3 * 2);
+  min-height: 16rem; /* Set a minimum height */
   text-align: justify;
   line-height: 1.2rem;
   font-size: 1rem;
@@ -133,20 +137,20 @@ main a::after {
 @media (max-width: 768px) {
   .container {
     width: 80vw;
-    height: 91vh; /* Adjust container height for mobile */
+    height: 91vh; 
     padding: 1.5rem;
-    border-width: 10px; /* Adjust border width */
+    border-width: 8px; 
+
   }
 
   .ascii-art {
-    font-size: 0.8rem; /* Smaller ASCII text */
-    margin: 0.1rem 0 0 0.8rem; /* Adjust margin */
+    font-size: 0.8rem; 
+    margin: 0.1rem 0 0 0.8rem; 
   }
 
   main {
     display: flex;
     flex-direction: column;
-    font-size: 0.8rem;
     margin: 0 0.2rem 0 0.2rem;
     padding: 0;
   }
@@ -155,7 +159,7 @@ main a::after {
     margin-left: 1rem;
   }
   .friend-list {
-    column-count: 2; /* Stack the friend list in one column on mobile */
+    column-count: 2;
     column-gap: 1.8rem;
     margin-left: 1rem;
   }
@@ -170,4 +174,10 @@ main a::after {
     margin: 0.6rem 0 0 0
   }
 
+}
+@media (max-width: 500px) {
+  .friend-list {
+    column-count: 1; /* Single column for smaller screens */
+    column-gap: 0; /* Remove gap */
+  }
 }

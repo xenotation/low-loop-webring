@@ -11,15 +11,14 @@ function debounce(func, delay) {
 function populateList(listClass, dataArray) {
     const list = document.querySelector(listClass);
     const descriptionParagraph = document.querySelector('.description p');
-    
-    // Default description text
-    const defaultDescription = 
-        'This webring is an experiment in bringing together artists, developers and researchers to build their own website and share traffic among each other. The ring welcomes portfolios, blogs and all kinds of weird bizarre and strange webpages with an emphasis on Bulgarian creators. The web ring has a limited size of 94 participants.';
+
+    // Extract the default description from the .description element
+    const defaultDescription = document.querySelector('.description').textContent.trim();
 
     // Debounced function to update the description
     const updateDescription = debounce((text) => {
-        descriptionParagraph.textContent = text;
-    }, 100); // Adjust the delay as needed (e.g., 100ms)
+        descriptionParagraph.textContent = text || defaultDescription; // Use default text if description is empty or undefined
+    }, 123); // Adjust the delay as needed (e.g., 100ms)
 
     dataArray.forEach(item => {
         const listItem = document.createElement('li');
