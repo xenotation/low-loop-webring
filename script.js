@@ -13,11 +13,11 @@ function populateList(listClass, dataArray) {
     const descriptionParagraph = document.querySelector('.description p');
 
     // Extract the default description from the .description element
-    const defaultDescription = document.querySelector('.description').textContent.trim();
+    const defaultDescription = document.querySelector('.description').innerHTML.trim(); // Use innerHTML to keep inline HTML
 
     // Debounced function to update the description
     const updateDescription = debounce((text) => {
-        descriptionParagraph.textContent = text || defaultDescription; // Use default text if description is empty or undefined
+        descriptionParagraph.innerHTML = text || defaultDescription; // Use innerHTML to insert HTML content
     }, 123); // Adjust the delay as needed (e.g., 100ms)
 
     dataArray.forEach(item => {
