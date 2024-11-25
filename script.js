@@ -10,16 +10,27 @@ function debounce(func, delay) {
 // Function to populate the lists
 function populateList(listClass, dataArray) {
     const list = document.querySelector(listClass);
-    const descriptionParagraph = document.querySelector('.description');
+    const firstParagraph = document.querySelector('.description p'); // Target the first <p> element
 
-    // Extract the default description from the .description element
-    const defaultDescription = document.querySelector('.description').innerHTML.trim(); // Use innerHTML to keep inline HTML
+    // Extract the default description from the first <p> tag in the .description element
+    const defaultDescription = firstParagraph.innerHTML.trim(); // Get the innerHTML of the first <p>
 
     // Debounced function to update the description
-    const updateDescription = debounce((text) => {
-        descriptionParagraph.innerHTML = text || defaultDescription; // Use innerHTML to insert HTML content
-    }, 123); // Adjust the delay as needed (e.g., 100ms)
+    const updateDescription = debounce((html) => {
+        if (!html) {
+            firstParagraph.innerHTML = defaultDescription; // Reset to default if no content
+            return;
+        }
 
+        // Use DOM parsing for safer insertion of links and styles
+        const tempContainer = document.createElement('div');
+        tempContainer.innerHTML = html;
+
+        // Replace the content of the first <p> tag with the new HTML
+        firstParagraph.innerHTML = tempContainer.innerHTML;
+    }, 123); // Adjust the delay as needed
+
+    // Create list items and add event listeners
     dataArray.forEach(item => {
         const listItem = document.createElement('li');
         const link = document.createElement('a');
@@ -50,5 +61,3 @@ fetch('data.json')
     .catch(error => {
         console.error('Error loading the data:', error);
     });
-
-
