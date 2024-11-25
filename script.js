@@ -10,7 +10,7 @@ function debounce(func, delay) {
 // Function to populate the lists
 function populateList(listClass, dataArray) {
     const list = document.querySelector(listClass);
-    const descriptionParagraph = document.querySelector('.description p');
+    const descriptionParagraph = document.querySelector('.description');
 
     // Extract the default description from the .description element
     const defaultDescription = document.querySelector('.description').innerHTML.trim(); // Use innerHTML to keep inline HTML
@@ -50,3 +50,5 @@ fetch('data.json')
     .catch(error => {
         console.error('Error loading the data:', error);
     });
+
+
