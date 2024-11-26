@@ -43,12 +43,6 @@ body, html {
   }
 }
 
-@font-face {
-  font-family: 'MS33558C';
-  src: url('/MS33558C.otf') format('opentype');
-  font-weight: normal;
-}
-
 
 header {
   text-align: left;
@@ -66,7 +60,6 @@ main {
   flex-direction: column;
   gap: 0;
   padding: 1rem 0;
-  /* font-family: 'MS33558C', sans-serif; */
   text-align: justify;
   text-wrap: nowrap;
 }
@@ -185,8 +178,6 @@ transition: color 0.23s ease, text-shadow 0.36s ease;
     font-size: 0.9rem; 
     margin: 0 1rem 0 1rem;
     width: auto;
-    font-family: 'MS33558C', sans-serif;
-
   }
 
   .description p {
