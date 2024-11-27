@@ -134,7 +134,7 @@ transition: color 0.23s ease, text-shadow 0.36s ease;
 }
 
 /* Two collum desktop */
-@media (max-width: 1640px) {
+@media (max-width: 1280px) {
   .friend-list {
     column-count: 2;
     column-gap: 1.8rem;
