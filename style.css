@@ -73,6 +73,10 @@ main a::after {
 }
 
 
+.links a {
+  margin-right: 1rem;
+}
+
 .me-list, .friend-list {
   list-style: none;
   padding: 0;
