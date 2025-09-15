@@ -1,0 +1,163 @@
+name: Inject JSON-LD Schema
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+env:
+  INDEX_PATH: index.html      # change if your index is elsewhere (e.g., docs/index.html)
+  DATA_PATH: data.json        # change if your data file lives elsewhere
+
+jobs:
+  inject:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate and inject JSON-LD (static)
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ ! -f "$INDEX_PATH" ]]; then
+            echo "ERROR: $INDEX_PATH not found"; exit 1
+          fi
+          if [[ ! -f "$DATA_PATH" ]]; then
+            echo "ERROR: $DATA_PATH not found"; exit 1
+          fi
+
+          # Run Node inline (no separate script file)
+          node - <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+
+          const INDEX_PATH = process.env.INDEX_PATH || 'index.html';
+          const DATA_PATH  = process.env.DATA_PATH  || 'data.json';
+
+          const html = fs.readFileSync(INDEX_PATH, 'utf8');
+          const data = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
+
+          // --- helpers ---
+          const pick = (re, s, d='') => (s.match(re)?.[1] || d).trim();
+          const normalizeType = (t) => {
+            if (!t) return 'Organization';
+            const k = String(t).trim().toLowerCase();
+            if (k === 'person') return 'Person';
+            if (k === 'organization' || k === 'organisation') return 'Organization';
+            if (k === 'musicgroup') return 'MusicGroup';
+            if (k === 'podcastseries') return 'PodcastSeries';
+            if (k === 'website' || k === 'site') return 'WebSite';
+            return 'Organization';
+          };
+          const normalizeSameAs = (v) => {
+            if (!v) return [];
+            if (Array.isArray(v)) return v.filter(Boolean).map(String).map(s=>s.trim()).filter(Boolean);
+            return String(v).split(/[\s,]+/).map(s=>s.trim()).filter(Boolean);
+          };
+
+          // --- derive site info from index.html ---
+          const title = pick(/<title>([\s\S]*?)<\/title>/i, html, 'Под Нет').replace(/\s+/g,' ');
+          const htmlLang = pick(/<html[^>]*\blang=["']?([a-zA-Z-]+)["']?[^>]*>/i, html, 'bg');
+          const canonical = pick(/<link[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["'][^>]*>/i, html, '');
+          const ogUrl = pick(/<meta[^>]*property=["']og:url["'][^>]*content=["']([^"']+)["']/i, html, '');
+          const base = (canonical || ogUrl || 'https://low-loop.xyz/').replace(/\/?$/, '/');
+
+          const siteUrl = base;                        // homepage
+          const pageUrl = base;                        // index page
+          const websiteId  = siteUrl.replace(/\/+$/, '') + '/#website';
+          const webpageId  = pageUrl + '#webpage';
+          const orgId      = siteUrl.replace(/\/+$/, '') + '/#org';
+          const itemListId = siteUrl.replace(/\/+$/, '') + '/#participants';
+
+          // --- flatten + filter entries ---
+          const me = Array.isArray(data.me) ? data.me : [];
+          const friends = Array.isArray(data.friends) ? data.friends : [];
+          const all = me.concat(friends);
+
+          const entries = all.filter(e =>
+            e && e.name && e.name !== '▓▓▓▓▓▓▓▓' && e.link && String(e.link).trim().length > 0
+          );
+
+          // --- participants nodes ---
+          const participantNodes = entries.map(e => {
+            const node = {
+              '@type': normalizeType(e.type),
+              '@id': e.link,
+              name: e.name,
+              url: e.link
+            };
+            if (e.description) node.description = e.description;
+            const sameAs = normalizeSameAs(e.sameas || e.sameAs);
+            if (sameAs.length) node.sameAs = sameAs;
+            return node;
+          });
+
+          const itemListElements = participantNodes.map((n, i) => ({
+            '@type': 'ListItem', position: i + 1, item: { '@id': n['@id'] }
+          }));
+
+          const graph = [
+            {
+              '@type':'WebSite',
+              '@id': websiteId,
+              url: siteUrl,
+              name: title,
+              inLanguage: htmlLang,
+              description: 'Уебринг за артисти, разработчици и изследователи с фокус върху български създатели и лични сайтове.',
+              publisher: { '@id': orgId }
+            },
+            {
+              '@type':'WebPage',
+              '@id': webpageId,
+              url: pageUrl,
+              name: title + ' — уебринг',
+              isPartOf: { '@id': websiteId },
+              mainEntity: { '@id': itemListId }
+            },
+            {
+              '@type':'Organization',
+              '@id': orgId,
+              name: title + ' (уебринг)',
+              url: siteUrl,
+              member: participantNodes.map(p => ({ '@id': p['@id'] }))
+            },
+            {
+              '@type':'ItemList',
+              '@id': itemListId,
+              name: 'Участници в уебринга',
+              itemListOrder: 'http://schema.org/ItemListOrderAscending',
+              numberOfItems: itemListElements.length,
+              itemListElement: itemListElements
+            },
+            ...participantNodes
+          ];
+
+          const jsonld = { '@context':'https://schema.org', '@graph': graph };
+          const block = `<script type="application/ld+json">\n${JSON.stringify(jsonld)}\n</script>`;
+
+          const start = '<!-- BEGIN: AUTO-SCHEMA -->';
+          const end   = '<!-- END: AUTO-SCHEMA -->';
+          if (!html.includes(start) || !html.includes(end)) {
+            console.error('Markers not found in index.html <head>. Add <!-- BEGIN: AUTO-SCHEMA --> and <!-- END: AUTO-SCHEMA -->');
+            process.exit(1);
+          }
+          const updated = html.replace(new RegExp(`${start}[\\s\\S]*?${end}`), `${start}\n${block}\n${end}`);
+          fs.writeFileSync(INDEX_PATH, updated);
+          console.log(`Injected JSON-LD with ${participantNodes.length} participants into ${INDEX_PATH}`);
+          NODE
+
+      - name: Commit changes (if any)
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(seo): inject static JSON-LD from data.json"
+          branch: ${{ github.ref_name }}
+          file_pattern: ${{ env.INDEX_PATH }}

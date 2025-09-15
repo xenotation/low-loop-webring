@@ -35,7 +35,8 @@
       {
         "name": "Voke Starman",
         "description": "Deep seshy music from the balkans for relaxation and self-exploration.",
-        "link": "https://soundcloud.com/vokestar"
+        "link": "https://soundcloud.com/vokestar",
+        "sameas": ""
       },
       {
         "name": "▓▓▓▓▓▓▓▓",
@@ -73,9 +74,9 @@
         "link": "https://plankton.bg/"
       },
       {
-        "name": "▓▓▓▓▓▓▓▓",
-        "description": "",
-        "link": ""
+        "name": "Aaron Roth",
+        "description": "Aaron Roth, born in Los Angeles (1998), moved to Bulgaria at the age of 13. He currently works in Sofia. In 2021, he received his bachelor’s in painting from the Slade School of Fine Art with a thesis on the visual culture of Bulgarian Pop folk music. In the same year, he had a solo exhibition titled “Biznes (End) Management” in Sofia.",
+        "link": "https://aaronroth.xyz/"
       },
       {
         "name": "Punta Gallery",
@@ -185,13 +186,16 @@
       },
       {
         "name": "Rain Marks",
+        "type": "Person",
         "description": "fiction and faction",
         "link": "https://rainmarks.com/"
       },
       {
         "name": "Raw Lab",
+        "type": "Organisation",
         "description": "Raw Lab is a research-based collective working at the intersection of art and technology. Through their artisticpractice, rawlab aims to provoke contemplation on thecomplexities of language, perception, and the evolvingrelationship between humans and technology.",
-        "link": "https://rawlab.xyz/"
+        "link": "https://rawlab.xyz/",
+        "sameas": "https://www.instagram.com/rawlab.xyz/"
       },
       {
         "name": "▓▓▓▓▓▓▓▓",
@@ -200,6 +204,7 @@
       },
       {
         "name": "The Headstall",
+        "type": "Organisation",
         "description": "The Headstall е алтернативна рок група,  вплитаща силни уейв, пост-пънк и пънк влияния. През 00-те издава три албума. Прави десетки концерти в София (предимно в О!Шипка, но също и в Три уши и Сцената), участва в няколко фестивала и заснема два официални клипа (“Използвачески сълзи” и “Айсберг”) и много неофициални.",
         "link": "https://theheadstall.wordpress.com/"
       },
