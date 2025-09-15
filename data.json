@@ -2,40 +2,24 @@
     "me": [
       {
         "name": "New Degeneration",
+        "type": "Organisation",
         "description": "Blog for occultural writings and translations, maintaned by Nikola Stoyanov",
-        "link": "https://blog.newdegeneration.xyz"
+        "link": "https://blog.newdegeneration.xyz",
+        "sameas": "https://www.facebook.com/newdegen/"
       }
     ],
   "friends": [
       {
         "name": "▓▓▓▓▓▓▓▓",
         "description": "",
-        "link": ""
+        "link": "",
+        "sameas": ""
+        
       },
       {
         "name": "▓▓▓▓▓▓▓▓",
         "description": "",
-        "link": ""
-      },
-      {
-        "name": "▓▓▓▓▓▓▓▓",
-        "description": "",
-        "link": ""
-      },
-      {
-        "name": "▓▓▓▓▓▓▓▓",
-        "description": "",
-        "link": ""
-      },
-      {
-        "name": "▓▓▓▓▓▓▓▓",
-        "description": "",
-        "link": ""
-      },
-      {
-        "name": "Voke Starman",
-        "description": "Deep seshy music from the balkans for relaxation and self-exploration.",
-        "link": "https://soundcloud.com/vokestar",
+        "link": "",
         "sameas": ""
       },
       {
@@ -54,7 +38,30 @@
         "link": ""
       },
       {
+        "name": "Voke Starman",
+        "type": "Person",
+        "description": "Deep seshy music from the balkans for relaxation and self-exploration.",
+        "link": "https://soundcloud.com/vokestar",
+        "sameas": "https://www.instagram.com/outofitt/"
+      },
+      {
+        "name": "▓▓▓▓▓▓▓▓",
+        "description": "",
+        "link": ""
+      },
+      {
+        "name": "▓▓▓▓▓▓▓▓",
+        "description": "",
+        "link": ""
+      },
+      {
+        "name": "▓▓▓▓▓▓▓▓",
+        "description": "",
+        "link": ""
+      },
+      {
         "name": "Delyo",
+        "type": "Person",
         "description": "Rants on digital and other freedom by a concerned netizen. In here I talk about counter/culture, digital freedom and openness, and other things. I use free and open tools. I'm doing my part to take back the web.",
         "link": "https://garden.delyo.be/"
       },
@@ -65,23 +72,30 @@
       },
       {
         "name": "Галерия Лира",
+        "type": "Organisation",
         "description": "Галерия „Лира“ се открива през 2024 г. и се помещава във входната витрина на сграда, представителна за българския архитектурен модернизъм, на улица „Генерал Йосиф Гурко“ 45 с архитект Васил (Васко) Василев. Целта на галерията е да представя едно художествено произведение за период от два месеца от млад или установяващ се артист.",
         "link": "https://gurko45.org/"
       },
       {
         "name": "Plankton",
         "description": "Планктон е дигитална платформа за представяне на специално подбрани късометражни и среднометражни филми, насочени към българската публика. В нея всяка седмица ще бъде публикувано ново заглавие, достъпно за безплатно онлайн гледане за период от седем дни.",
-        "link": "https://plankton.bg/"
+        "link": "https://plankton.bg/",
+        "sameas": "https://www.instagram.com/plankton_space/"
       },
       {
         "name": "Aaron Roth",
+        "type": "Person",
         "description": "Aaron Roth, born in Los Angeles (1998), moved to Bulgaria at the age of 13. He currently works in Sofia. In 2021, he received his bachelor’s in painting from the Slade School of Fine Art with a thesis on the visual culture of Bulgarian Pop folk music. In the same year, he had a solo exhibition titled “Biznes (End) Management” in Sofia.",
-        "link": "https://aaronroth.xyz/"
+        "link": "https://aaronroth.xyz/",
+        "sameas": "https://www.instagram.com/chicho_ti_rondo/"
       },
       {
         "name": "Punta Gallery",
+        "type": "Person",
         "description": "Punta is a contemporary art gallery with a focus on trash art. The projects in the space are oriented towards the use of recycled images and materials, post-internet aesthetics, the treatment of topics such as the climate crisis and social issues. The gallery presents young and established, Bulgarian and foreign artists.",
-        "link": "https://puntagallery.com/"
+        "link": "https://puntagallery.com/",
+        "sameas": "https://www.facebook.com/puntagallery/",
+        "sameas": "https://www.instagram.com/puntagallery/"
       },
       {
         "name": "▓▓▓▓▓▓▓▓",
@@ -105,8 +119,10 @@
       },
       {
         "name": "Zahari Dimitrov",
+        "type": "Person",
         "description": "Archive of graphic design work by Zahari Dimitrov. Also very cool website.",
-        "link": "https://archive.zahari.xyz/"
+        "link": "https://archive.zahari.xyz/",
+        "sameas": "https://www.instagram.com/zahari____/"        
       },
       {
         "name": "▓▓▓▓▓▓▓▓",
@@ -131,8 +147,13 @@
       },
       {
         "name": "Nikola Stoyanov",
-        "description": "Nikola Stoyanov is a contemporary visual artist and machine philosopher from Varna, Bulgaria.",
-        "link": "https://newdegeneration.xyz/"
+        "type": "Person",
+        "description": "Nikola V. Stoyanov is a visual artist and philosopher living in Varna, Bulgaria. He is the author of numerous exhibitions, specialising in photography and digital art. His work delves into theory-fiction, post-humanist research, and the boundaries of visual art.",
+        "link": "https://newdegeneration.xyz/",
+        "sameas": "https://monoskop.org/Nikola_Stoyanov",
+        "sameas": "https://newdegeneration.xyz/bio/",
+        "sameas": "https://www.instagram.com/avoid.nd/",
+        "sameas": "https://www.imdb.com/name/nm16814810/"
       },
       {
         "name": "▓▓▓▓▓▓▓▓",
@@ -146,6 +167,7 @@
       },
       {
         "name": "Michaela Lakova",
+        "type": "Person",
         "description": "Michaela Lakova is a visual artist and researcher currently based between Rotterdam and Sofia. Lakova explores how the generation of digital traces and their problematic resistance to being deleted impact our perception of data ownership. Investigating the ethics of deletion and recovery of data, Michaela analyses and interprets the notion of digital information by considering its slippery nature, superimposing processes of digital recovery over the materiality of human memory.",
         "link": "http://www.mlakova.org"
       },
@@ -166,8 +188,10 @@
       },
       {
         "name": "Podtochka",
+        "type": "Person",
         "description": "Bulgaria based graphic designer with a focus on visual communication and editorial illustrations.",
-        "link": "https://www.podtochka.com/"
+        "link": "https://www.podtochka.com/",
+        "sameas": "https://www.instagram.com/podtochka/"
       },
       {
         "name": "▓▓▓▓▓▓▓▓",
@@ -245,6 +269,7 @@
       },
       {
         "name": "Twinkcel Chron.",
+        "type": "Person",
         "description": "Cultural, societal and personal discussion, mostly comedic, very unserious. Sometimes unlistenable.",
         "link": "https://creators.spotify.com/pod/show/twinkcelchronicles"
       },
@@ -270,8 +295,11 @@
       },
       {
         "name": "Synaesthesia Collec.",
+        "type": "Person",
         "description": "Synaesthesia Collective are artists Georgi P. Pavlov, Diana Bunkin  and Stefan Hristov. They are mainly interested in underground culture, new, alternative and marginalized artists, artistic interventions in alternative spaces, and highly collaborative interdisciplinary projects, which focus on different political and cultural matters.",
-        "link": "https://www.synaesthesiacollective.art/"
+        "link": "https://www.synaesthesiacollective.art/",
+        "sameas": "https://www.instagram.com/synaesthesia.collective/",
+        "sameas": "https://www.facebook.com/synaesthesiacollective.bg/"
       },
       {
         "name": "▓▓▓▓▓▓▓▓",
@@ -295,8 +323,10 @@
       },
       {
         "name": "Нощни плажове",
+        "type": "Person",
         "description": "Твоята геометрична визия е „разположена в пространство, което в никакъв случай не е визуално по своята същност и от триумф оптическото несъзнавано вещ.",
-        "link": "https://zlatomirzlatanov.video.blog/"
+        "link": "https://zlatomirzlatanov.video.blog/",
+        "sameas": "https://www.facebook.com/zlatomir.zlatanov.39"
       }
       ,
       {
