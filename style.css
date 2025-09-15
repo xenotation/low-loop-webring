@@ -2,6 +2,15 @@ body, html {
   background-color: #16171E;
   color: #CB76A9; 
 }
+
+.container {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox, Safari 18.2+, Chromium 121+ */
+}
+.container::-webkit-scrollbar { 
+  display: none;  /* Older Safari and Chromium */
+}
+
 .container {
   max-width: 34vw; /* Maintain size on larger screens */
   height: auto;

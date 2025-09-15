@@ -152,5 +152,78 @@
         <script src="random.js"></script>
         <script>NekoType="pink"</script>
         <h1 id="nl"><script src="https://webneko.net/n20171213.js"></script><a href="https://webneko.net">Neko</a></h1>
+        <script>
+          (async function () {
+            const DATA_URL = '/webring.json'; // коригирай пътя при нужда
+            const res = await fetch(DATA_URL, { cache: 'no-store' });
+            const data = await res.json();
+          
+            const ring = data.ring || {};
+            const participantsRaw = (ring.me || []).concat(ring.friends || []);
+          
+            // пропускаме плейсхолдърите
+            const participants = participantsRaw.filter(x =>
+              x && x.name && x.name !== "▓▓▓▓▓▓▓▓" && x.link && x.link.trim().length > 0
+            );
+          
+            // мап към валидни schema типове
+            const typeMap = {
+              "Person": "Person",
+              "Organization": "Organization",
+              "MusicGroup": "MusicGroup",
+              "PodcastSeries": "PodcastSeries",
+              "WebSite": "WebSite"
+            };
+          
+            const itemList = participants.map((p, i) => {
+              const schemaType = typeMap[p.type] || "Organization";
+              const item = {
+                "@type": schemaType,
+                "name": p.name,
+                "url": p.link
+              };
+              if (p.description) item.description = p.description;
+              return {
+                "@type": "ListItem",
+                "position": i + 1,
+                "item": item
+              };
+            });
+          
+            const graph = [
+              {
+                "@type": "WebSite",
+                "name": ring.name || "Под Нет",
+                "inLanguage": ring.lang || "bg",
+                "url": ring.url || "https://low-loop.xyz",
+                "description": "Уебринг за артисти, разработчици и изследователи с фокус върху български създатели и лични сайтове."
+              },
+              {
+                "@type": "Organization",
+                "name": (ring.name || "Под Нет") + " (уебринг)",
+                "url": ring.url || "https://low-loop.xyz",
+                "description": "Независим уебринг, насочващ трафик към качествени лични сайтове и проекти."
+              },
+              {
+                "@type": "ItemList",
+                "name": "Участници в уебринга",
+                "itemListOrder": "http://schema.org/ItemListOrderAscending",
+                "numberOfItems": itemList.length,
+                "itemListElement": itemList
+              }
+            ];
+          
+            const ld = {
+              "@context": "https://schema.org",
+              "@graph": graph
+            };
+          
+            const script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.textContent = JSON.stringify(ld);
+            document.head.appendChild(script);
+          })();
+          </script>
+          
     </body>
 </html>
